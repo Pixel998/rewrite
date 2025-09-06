@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.4.0](https://github.com/Pixel998/rewrite/compare/plugin-kit-v0.3.5...plugin-kit-v0.4.0) (2025-09-06)
+
+
+### Features
+
+* Add Directive and DirectiveType ([#112](https://github.com/Pixel998/rewrite/issues/112)) ([e5bbcf1](https://github.com/Pixel998/rewrite/commit/e5bbcf148874be07d5667f34ed395faaf8c72972))
+* Add plugin-kit package ([#99](https://github.com/Pixel998/rewrite/issues/99)) ([09ce430](https://github.com/Pixel998/rewrite/commit/09ce43073760b69a3bcca89f99793549cd566bf6))
+* add support for `getLocFromIndex` and `getIndexFromLoc` ([#212](https://github.com/Pixel998/rewrite/issues/212)) ([a3588d8](https://github.com/Pixel998/rewrite/commit/a3588d8fb2dc6b9a0b39b26a49d0cdd437646d49))
+* make `TextSourceCodeBase` a generic type ([#182](https://github.com/Pixel998/rewrite/issues/182)) ([484b6ca](https://github.com/Pixel998/rewrite/commit/484b6ca3149354736317fca09efd3156caa4f4f9))
+
+
+### Bug Fixes
+
+* CommonJS types in all packages ([#148](https://github.com/Pixel998/rewrite/issues/148)) ([c91866c](https://github.com/Pixel998/rewrite/commit/c91866cc9fe16fb62bc48fc1cc7f9e18c6fea013))
+* make `plugin-kit` types usable in CommonJS ([#143](https://github.com/Pixel998/rewrite/issues/143)) ([f77ba17](https://github.com/Pixel998/rewrite/commit/f77ba177d4e4c5d2ed828cfd9a5149df2ccb3a7f))
+* potential quadratic runtime in regular expression ([#240](https://github.com/Pixel998/rewrite/issues/240)) ([b283f64](https://github.com/Pixel998/rewrite/commit/b283f64099ad6c6b5043387c091691d21b387805))
+* Update RuleVisitor type ([#135](https://github.com/Pixel998/rewrite/issues/135)) ([156d601](https://github.com/Pixel998/rewrite/commit/156d601181deb362a2864c4d47d4e3da8609500b))
+* Upgrade @eslint/core ([#197](https://github.com/Pixel998/rewrite/issues/197)) ([a830283](https://github.com/Pixel998/rewrite/commit/a830283cd05a7a471aeec5f4589491f3c4092986))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @eslint/core bumped from ^0.15.2 to ^0.16.0
+
 ## [0.3.5](https://github.com/eslint/rewrite/compare/plugin-kit-v0.3.4...plugin-kit-v0.3.5) (2025-08-05)
 
 
