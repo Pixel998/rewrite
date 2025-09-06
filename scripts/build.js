@@ -30,7 +30,7 @@ function buildPackages(packageDirs) {
 
 	for (const packageDir of packageDirs) {
 		console.log(`Building ${packageDir}...`);
-		execSync(`npx --yes npm run build -w ${packageDir} --if-present`, {
+		execSync(`bun --filter="${packageDir}" build`, {
 			stdio: "inherit",
 		});
 	}
