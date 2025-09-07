@@ -4,7 +4,7 @@ Please be sure to read the contribution guidelines before making or requesting a
 
 ## Code of Conduct
 
-This project adheres to the [OpenJS Foundation Code of Conduct](https://eslint.org/conduct). We kindly request that you read over our code of conduct before contributing.
+This prooject adheres to the [OpenJS Foundation Code of Conduct](https://eslint.org/conduct). We kindly request that you read over our code of conduct before contributing.
 
 ## Commands
 
