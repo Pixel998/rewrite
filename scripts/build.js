@@ -10,6 +10,8 @@
 //------------------------------------------------------------------------------
 
 import { execSync } from "node:child_process";
+import path from "node:path";
+import { readFileSync } from "node:fs";
 import {
 	getPackageDirs,
 	calculatePackageDependencies,
@@ -19,6 +21,15 @@ import {
 //------------------------------------------------------------------------------
 // Helpers
 //------------------------------------------------------------------------------
+
+const hasBunOnPath = (() => {
+    try {
+        execSync("bun --version", { stdio: "ignore" });
+        return true;
+    } catch {
+        return false;
+    }
+})();
 
 /**
  * Builds the packages in the correct order.
@@ -30,9 +41,27 @@ function buildPackages(packageDirs) {
 
 	for (const packageDir of packageDirs) {
 		console.log(`Building ${packageDir}...`);
-		execSync(`npm run build -w ${packageDir} --if-present`, {
-			stdio: "inherit",
-		});
+		try {
+			const pkg = JSON.parse(
+				readFileSync(path.join(packageDir, "package.json"), "utf8"),
+			);
+
+			if (pkg.scripts && pkg.scripts.build) {
+				const useBunRuntime = Boolean(process.versions && process.versions.bun) || hasBunOnPath;
+				const cmd = useBunRuntime ? "bun run build" : "npm run build";
+				execSync(cmd, {
+					stdio: "inherit",
+					cwd: packageDir,
+				});
+			} else {
+				console.log(`Skipping ${packageDir} (no build script).`);
+			}
+		} catch (error) {
+			console.warn(
+				`Skipping ${packageDir} (unable to read or parse package.json):`,
+				error && (error.message || String(error)),
+			);
+		}
 	}
 
 	console.log("Done building packages.");
