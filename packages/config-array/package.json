@@ -53,6 +53,7 @@
     "minimatch": "^10.0.3"
   },
   "devDependencies": {
+    "@types/minimatch": "^5.1.2",
     "@jsr/std__path": "^1.0.4",
     "rollup-plugin-copy": "^3.5.0"
   },
