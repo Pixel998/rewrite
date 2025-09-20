@@ -3,6 +3,7 @@
   "files": ["src/index.js"],
   "compilerOptions": {
     "outDir": "dist/esm",
+    "skipLibCheck": true,
     "types": []
   }
 }
