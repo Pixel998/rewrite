@@ -3,10 +3,10 @@ name: CI
 on:
     push:
         branches:
-            - main
+            - Pixel998-patch-1
     pull_request:
         branches:
-            - main
+            - Pixel998-patch-1
 
 jobs:
     verify_files:
